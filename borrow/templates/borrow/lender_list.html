@@ -1,0 +1,16 @@
+{% extends "borrow/base.html" %}
+{% block content %}
+    {% for each_lender in list_of_lenders %}
+        <article class="media content-section">
+            <img src="{{ each_lender.lender_id.lenderprofile.image.url }}">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <!-- <a class="mr-2" href="#">{{ each_lender.title }}</a> -->
+                    <small class="text-muted">{{ each_lender.lender_id.lender_type.title}}</small>
+                </div>
+                <!-- <h2><a class="article-title" href="#">{{ each_lender.title }}</a></h2> -->
+                <h3 class="article-content">{{ each_lender.lender_id.title}}</h3>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock content%}
